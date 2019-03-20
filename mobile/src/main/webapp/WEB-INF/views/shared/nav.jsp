@@ -30,7 +30,8 @@
                     <li id="list1"><a href="${context}/show/all/products">View Products</a>
                     </li>
                     <li id="contact"><a href="${context}/contact">Contact</a>
-                    
+                    </li>
+                    <li id="manageProduct"><a href="${context}//manage/products">Manage Proudct</a>
                     </li>
                 </ul>
             </div>

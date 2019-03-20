@@ -37,15 +37,29 @@
 			</h4>
 			<hr />
 
-			<h6>Qty.Available:${product.quantity}</h6>
+			
 
-			<a href="${context}/cart/add/${product.id}/product"
-				class="btn btn-success"> <span
-				class="glyphicon glyphicon-shopping-cart"></span>Add to cart
-			</a> <a href="${context}/show/all/products" class="btn btn-primary">
+	<c:choose>
+	
+		<c:when test="${product.quantity < 4}">
+			<h6>Qty.Available:<span style="color:red">out of stock</span></h6>
+			
+			<a href="javascript:void(0)" class="btn btn-success disabled"><strike> <span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</strike></a>
+		</c:when>
+	
+	<c:otherwise>
+	
+		<h6>Qty.Available:${product.quantity}</h6>
+		<a href="${context}/cart/add/${product.id}/product" class="btn btn-success"> <span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a>
+	
+	</c:otherwise>
+	</c:choose>
 
-				Back</a>
+<%-- <a href="${context}/cart/add/${product.id}/product" class="btn btn-success"> <span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a> --%>
+				
+				 <a href="${context}/show/all/products" class="btn btn-primary">Back</a>
 
+				
 		</div>
 
 
